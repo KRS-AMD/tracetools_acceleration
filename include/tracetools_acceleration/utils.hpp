@@ -1,3 +1,4 @@
+// Copyright 2021 Xilinx®
 // Copyright 2019 Robert Bosch GmbH
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,8 +13,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef TRACETOOLS__UTILS_HPP_
-#define TRACETOOLS__UTILS_HPP_
+#ifndef TRACETOOLS_ACCELERATION__UTILS_HPP_
+#define TRACETOOLS_ACCELERATION__UTILS_HPP_
 
 #include <stddef.h>
 #include <functional>
@@ -62,4 +63,4 @@ const char * get_symbol(L && l)
   return _demangle_symbol(typeid(l).name());
 }
 
-#endif  // TRACETOOLS__UTILS_HPP_
+#endif  // TRACETOOLS_ACCELERATION__UTILS_HPP_

@@ -33,8 +33,8 @@
  *   - utility functions
  */
 
-#ifndef TRACETOOLS__TRACETOOLS_H_
-#define TRACETOOLS__TRACETOOLS_H_
+#ifndef TRACETOOLS_ACCELERATION__TRACETOOLS_H_
+#define TRACETOOLS_ACCELERATION__TRACETOOLS_H_
 
 #include <stdint.h>
 #include <string.h>
@@ -96,4 +96,4 @@ DECLARE_TRACEPOINT(
 }
 #endif
 
-#endif  // TRACETOOLS__TRACETOOLS_H_
+#endif  // TRACETOOLS_ACCELERATION__TRACETOOLS_H_

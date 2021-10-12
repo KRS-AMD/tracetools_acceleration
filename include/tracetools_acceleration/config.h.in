@@ -1,3 +1,4 @@
+// Copyright 2021 Xilinx®
 // Copyright 2019 Robert Bosch GmbH
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,10 +13,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef TRACETOOLS__CONFIG_H_
-#define TRACETOOLS__CONFIG_H_
+#ifndef TRACETOOLS_ACCELERATION__CONFIG_H_
+#define TRACETOOLS_ACCELERATION__CONFIG_H_
 
 #cmakedefine TRACETOOLS_DISABLED
 #cmakedefine TRACETOOLS_LTTNG_ENABLED
 
-#endif  // TRACETOOLS__CONFIG_H_
+#endif  // TRACETOOLS_ACCELERATION__CONFIG_H_
