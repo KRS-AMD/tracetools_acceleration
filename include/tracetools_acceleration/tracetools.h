@@ -67,29 +67,25 @@ extern "C"
  */
 TRACETOOLS_PUBLIC bool ros_trace_compile_status();
 
-/// `vadd_pre_simple`
+/// `vadd_pre`
 /**
- * Initialisation for the whole process.
+ * Tracepoint before calling acceleration kernel
+ *
+ * Notes the `tracetools_acceleration` version automatically.
+ */
+DECLARE_TRACEPOINT(
+  vadd_pre)
+
+
+/// `vadd_post`
+/**
+ * Tracepoint after calling acceleration kernel
+ *
  * Notes the `tracetools` version automatically.
  */
 DECLARE_TRACEPOINT(
-  vadd_pre_simple)
+  vadd_post)
 
-/// `vadd_pre`
-/**
- * Node initialisation.
- * Links a `rcl_node_t` handle to its `rmw_node_t` handle.
- *
- * \param[in] node_handle pointer to the node's `rcl_node_t` handle
- * \param[in] rmw_handle pointer to the node's `rmw_node_t` handle
- * \param[in] node_name node name
- * \param[in] node_namespace node namespace
- */
-DECLARE_TRACEPOINT(
-  vadd_pre,
-  const unsigned int * in1,
-  const unsigned int * in2,
-  const unsigned int * out)
 
 
 #ifdef __cplusplus

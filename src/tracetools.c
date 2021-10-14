@@ -52,23 +52,17 @@ bool ros_trace_compile_status()
 #endif
 
 void TRACEPOINT(
-  vadd_pre_simple)
+  vadd_pre)
 {
   CONDITIONAL_TP(
-    vadd_pre_simple);
+    vadd_pre);
 }
 
 void TRACEPOINT(
-  vadd_pre,
-  const unsigned int * in1,
-  const unsigned int * in2,
-  const unsigned int * out)
+  vadd_post)
 {
   CONDITIONAL_TP(
-    vadd_pre,
-    in1,
-    in2,
-    out);
+    vadd_post);
 }
 
 #ifndef _WIN32

@@ -41,30 +41,23 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define DATA_SIZE 4096  // 2**12
-
 TRACEPOINT_EVENT(
   TRACEPOINT_PROVIDER,  // tracepoint provider name
-  vadd_pre_simple,      // tracepoint name
+  vadd_pre,             // tracepoint name
   TP_ARGS(              // input arguments, see https://lttng.org/docs/v2.12/#doc-tpp-def-input-args
   ),
   TP_FIELDS(            // output event fields, see https://lttng.org/man/3/lttng-ust/v2.12/#doc-ctf-macros
-    ctf_string(version, tracetools_acceleration_VERSION)
+    ctf_string(version, tracetools_acceleration_VERSION)  // dump the version of the package
   )
 )
 
 TRACEPOINT_EVENT(
   TRACEPOINT_PROVIDER,
-  vadd_pre,
+  vadd_post,
   TP_ARGS(
-    const unsigned int *, in1_arg,
-    const unsigned int *, in2_arg,
-    const unsigned int *, out_arg
   ),
   TP_FIELDS(
-    ctf_array(const unsigned int *, in1, in1_arg, DATA_SIZE)
-    ctf_array(const unsigned int *, in2, in2_arg, DATA_SIZE)
-    ctf_array(const unsigned int *, out, out_arg, DATA_SIZE)
+    ctf_string(version, tracetools_acceleration_VERSION)  // dump the version of the package
   )
 )
 
