@@ -1,26 +1,28 @@
-//     ____  ____
-//    /   /\/   /
-//   /___/  \  /   Copyright (c) 2021, Xilinx®.
-//   \   \   \/    Author: Víctor Mayoral Vilches <victorma@xilinx.com>
-//    \   \
-//    /   /
-//   /___/   /\
-//   \   \  /  \
-//    \___\/\___\
-//
-// Inspired by https://gitlab.com/ros-tracing/ros2_tracing
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+/*
+    ____  ____
+   /   /\/   /
+  /___/  \  /   Copyright (c) 2021, Xilinx®.
+  \   \   \/    Author: Víctor Mayoral Vilches <victorma@xilinx.com>
+   \   \
+   /   /
+  /___/   /\
+  \   \  /  \
+   \___\/\___\
+
+Inspired by https://gitlab.com/ros-tracing/ros2_tracing
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
 
 #include "tracetools_acceleration/tracetools.h"
 
@@ -51,18 +53,62 @@ bool ros_trace_compile_status()
 # pragma warning(disable: 4100)
 #endif
 
+// Silly examples for simple vadd kernel
 void TRACEPOINT(
-  vadd_pre)
+  vadd_pre,
+  const char * iteration)
 {
   CONDITIONAL_TP(
-    vadd_pre);
+    vadd_pre,
+    iteration);
 }
 
 void TRACEPOINT(
-  vadd_post)
+  vadd_post,
+  const char * iteration)
 {
   CONDITIONAL_TP(
-    vadd_post);
+    vadd_post,
+    iteration);
+}
+
+// ros2_kria packages for proprioception
+void TRACEPOINT(
+  kria_power,
+  const double power)
+{
+  CONDITIONAL_TP(
+    kria_power,
+    power);
+}
+
+void TRACEPOINT(
+  kria_power_dt,
+  const double power,
+  const double dt)
+{
+  CONDITIONAL_TP(
+    kria_power_dt,
+    power,
+    dt);
+}
+
+void TRACEPOINT(
+  kria_voltage,
+  const double voltage)
+{
+  CONDITIONAL_TP(
+    kria_voltage,
+    voltage);
+}
+
+void TRACEPOINT(
+  kria_current,
+  const double current)
+{
+  CONDITIONAL_TP(
+    kria_current,
+    current);
 }
 
 #ifndef _WIN32
