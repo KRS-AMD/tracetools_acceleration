@@ -2,6 +2,10 @@
 Changelog for package tracetools_acceleration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.2.0 (2021-12-20)
+------------------
+* Minor documentation updates
+
 0.1.0 (2021-10-14)
 ------------------
 * Fork tracetools and shape it as tracetools_acceleration

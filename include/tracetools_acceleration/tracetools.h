@@ -24,9 +24,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-/** \mainpage tracetools: tracing tools and instrumentation for ROS 2
+/** \mainpage tracetools_acceleration: tracing tools and instrumentation for ROS 2
+ *  Hardware Acceleration Working Group.
  *
- * `tracetools` provides utilities to instrument ROS.
+ * `tracetools_acceleration` provides utilities to instrument ROS 2 selected packages
+ *  that demonstrate hardware acceleration.
+ *
  * It provides two main headers:
  *
  * - tracetools/tracetools.h
