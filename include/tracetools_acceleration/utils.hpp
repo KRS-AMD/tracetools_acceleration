@@ -24,9 +24,17 @@
 /// Default symbol, used when address resolution fails.
 #define SYMBOL_UNKNOWN "UNKNOWN"
 
+namespace tracetools_acceleration
+{
+
+namespace detail
+{
+
 TRACETOOLS_PUBLIC const char * _demangle_symbol(const char * mangled);
 
 TRACETOOLS_PUBLIC const char * _get_symbol_funcptr(void * funcptr);
+
+}  // namespace detail
 
 /// Get symbol from an std::function object.
 /**
@@ -44,10 +52,10 @@ const char * get_symbol(std::function<T(U...)> f)
   // If we get an actual address
   if (fnPointer != nullptr) {
     void * funcptr = reinterpret_cast<void *>(*fnPointer);
-    return _get_symbol_funcptr(funcptr);
+    return detail::_get_symbol_funcptr(funcptr);
   }
   // Otherwise we have to go through target_type()
-  return _demangle_symbol(f.target_type().name());
+  return detail::_demangle_symbol(f.target_type().name());
 }
 
 /// Get symbol from a function-related object.
@@ -60,7 +68,9 @@ const char * get_symbol(std::function<T(U...)> f)
 template<typename L>
 const char * get_symbol(L && l)
 {
-  return _demangle_symbol(typeid(l).name());
+  return detail::_demangle_symbol(typeid(l).name());
 }
+
+}  // namespace tracetools_acceleration
 
 #endif  // TRACETOOLS_ACCELERATION__UTILS_HPP_
