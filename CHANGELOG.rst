@@ -4,7 +4,7 @@ Changelog for package tracetools_acceleration
 
 0.4.0 (2022-03-30)
 ------------------
-* Release 0.3.0
+* Release 0.4.0
 * Implement namespacing
 
 0.3.0 (2022-03-23)
