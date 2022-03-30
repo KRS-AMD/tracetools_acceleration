@@ -21,6 +21,12 @@
 #endif
 #include "tracetools_acceleration/utils.hpp"
 
+namespace tracetools_acceleration
+{
+
+namespace detail
+{
+
 const char * _demangle_symbol(const char * mangled)
 {
 #ifdef TRACETOOLS_LTTNG_ENABLED
@@ -49,3 +55,7 @@ const char * _get_symbol_funcptr(void * funcptr)
   return "DISABLED__get_symbol_funcptr";
 #endif
 }
+
+}  // namespace detail
+
+}  // namespace tracetools_acceleration
